@@ -1,0 +1,26 @@
+#include<stdio.h>
+int main(){
+    int n,a[100],min,i,j;
+    printf("Enter the size of the array: ");
+    scanf("%d",&n);
+    printf("Enter the elemenets in the array:\n");
+    for(int i=0;i<n;i++){
+        scanf("%d",&a[i]);
+    }
+    for( i=0;i<n;i++){
+        min=i;
+        for(j=i+1;j<n;j++){
+            if  (a[j] < a[min]){
+                min=j;
+            }
+        }
+        int temp = a[i];
+        a[i]=a[min];
+        a[min]=temp;
+     }
+     printf("Sorted array :");
+     for(i=0;i<n;i++){
+         printf("%d ",a[i]);
+     }
+        return 0;
+    }
